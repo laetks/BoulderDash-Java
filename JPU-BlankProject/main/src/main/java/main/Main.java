@@ -4,9 +4,12 @@
  */
 package main;
 
+import java.io.IOException;
+
 import contract.ControllerOrder;
 import controller.Controller;
-import model.Model;
+import model.BoulderDashModel;
+//import model.DAO.Model;
 import view.View;
 
 /**
@@ -20,9 +23,10 @@ public abstract class Main {
 	 * The main method.
 	 *
 	 * @param args the arguments
+	 * @throws IOException 
 	 */
-	public static void main(final String[] args) {
-		final Model model = new Model();
+	public static void main(final String[] args) throws IOException {
+		final BoulderDashModel model = new BoulderDashModel("map.txt", 0 , 0);
 		final View view = new View(model);
 		final Controller controller = new Controller(view, model);
 		view.setController(controller);
