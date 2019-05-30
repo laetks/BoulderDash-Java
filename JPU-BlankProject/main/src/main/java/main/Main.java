@@ -31,9 +31,9 @@ public abstract class Main {
 	
 	public static void main(final String[] args) throws IOException, InterruptedException {
 		final BoulderDashModel model = new BoulderDashModel(txt,1,1);
-		final View view = new View(model);
+		final View view = new View(model.getMap(), model.getMyPlayer());
 		final Controller controller = new Controller(view, model);
-		view.setController(controller);
+		view.setOrderPerformer(controller.getOrderPerformer());
 		// coucou
 
 		controller.play();

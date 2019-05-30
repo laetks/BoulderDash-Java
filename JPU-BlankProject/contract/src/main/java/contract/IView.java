@@ -12,5 +12,6 @@ public interface IView {
 	 *
 	 * @param message the message
 	 */
-	void printMessage(final String message);
+	void displayMessage(String message);
+	void followMyVehicle();
 }
