@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Dimension;
+import java.awt.List;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -17,6 +18,7 @@ import javax.swing.SwingUtilities;
 import fr.exia.showboard.BoardFrame;
 
 import entity.IMap;
+
 
 /**
  * The Class View.
@@ -45,6 +47,10 @@ public final class View extends Observable implements IView, Runnable, KeyListen
 
 	/** The order performer. */
 	private IOrderPerformer orderPerformer;
+	
+	
+	
+
 
 	/**
 	 * Instantiates a new insane vehicles View.
@@ -59,6 +65,10 @@ public final class View extends Observable implements IView, Runnable, KeyListen
 		this.setmyPlayer(myPlayer);
 		this.getmyPlayer().getSprite().loadImage();
 		this.setgameView(new Rectangle(0, 0, 11, 11));
+		
+	
+		
+		
 		SwingUtilities.invokeLater(this);// Display the view
 	}
 
@@ -113,31 +123,16 @@ public final class View extends Observable implements IView, Runnable, KeyListen
 
 		// FOLLOW PLAYER
 		this.followMyPlayer();
+		
+		
 		boardFrame.setVisible(true);
+		
+
+		
+		
 	}
 
-	/**************************************************
-	 * Sprite Getting
-	 ********************************************/
-	/**
-	 * Prints the map and the player's vehicle in the console.
-	 *
-	 * @param yStart the y start
-	 */
-	public final void show(final int yStart) {
-		int y = yStart % this.getmap().getHeight();
-		for (int view = 0; view < this.getView(); view++) {
-			for (int x = 0; x < this.getmap().getWidth(); x++) {
-				if ((x == this.getmyPlayer().getX()) && (y == yStart)) {
-					System.out.print(this.getmyPlayer().getSprite().getConsoleImage());
-				} else {
-					System.out.print(this.getmap().getOnTheMapXY(x, y).getSprite().getConsoleImage());
-				}
-			}
-			y = (y + 1) % this.getmap().getHeight();
-			System.out.print("\n");
-		}
-	}
+	
 
 	/**************************************************
 	 * KeyListener

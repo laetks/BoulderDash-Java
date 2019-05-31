@@ -131,7 +131,7 @@ abstract class Mobile extends Element implements IMobile {
 	 * @see fr.exia.insanevehicles.model.element.mobile.IMobile#getX()
 	 */
 	@Override
-	public final int getX() {
+	public int getX() {
 		return this.getPosition().x;
 	}
 
@@ -151,7 +151,7 @@ abstract class Mobile extends Element implements IMobile {
 	 * @see fr.exia.insanevehicles.model.element.mobile.IMobile#getY()
 	 */
 	@Override
-	public final int getY() {
+	public int getY() {
 		return this.getPosition().y;
 	}
 
