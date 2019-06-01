@@ -8,16 +8,24 @@ public class MobileElementsFactory {
 
 	private static Mobile[] mobileElements = { monster, diamond, rock };
 
-	public static Mobile getFromFileSymbol(final char fileSymbol) {
+	public static Mobile getFromFileSymbol(final char fileSymbol, int x, int y) {
 		for (final Mobile mobileElement : mobileElements) {
-			if (mobileElement.getSprite().getConsoleImage() == fileSymbol) {
+			if (monster.getSprite().getConsoleImage() == fileSymbol) {
+				//AJOUT\\
+				createMonster(x, y); 
+				
+			
+			} else if (mobileElement.getSprite().getConsoleImage() == fileSymbol && monster.getSprite().getConsoleImage() != fileSymbol){
 				return mobileElement;
 			}
 		}
 		return monster;
 	}
 
-	public static Mobile createMonster() {
+	public static Mobile createMonster(int x, int y) {
+		//AJOUT\\
+		final Monster monster = new Monster(x,y);
+	
 		return monster;
 	}
 

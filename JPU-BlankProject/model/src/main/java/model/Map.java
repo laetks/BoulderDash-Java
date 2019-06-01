@@ -70,7 +70,7 @@ class Map extends Observable implements IMap {
 		while (line != null) {
 			for (int x = 0; x < line.toCharArray().length; x++) {
 				if (((line.toCharArray()[x]) == 'X') || ((line.toCharArray()[x]) == 'O') || ((line.toCharArray()[x])=='*')) {
-					this.setOnTheMapXY(MobileElementsFactory.getFromFileSymbol(line.toCharArray()[x]), x, y);
+					this.setOnTheMapXY(MobileElementsFactory.getFromFileSymbol(line.toCharArray()[x], x ,y), x, y);	
 				} else {
 				this.setOnTheMapXY(MotionlessElementsFactory.getFromFileSymbol(line.toCharArray()[x]), x, y);
 				}
@@ -136,7 +136,8 @@ class Map extends Observable implements IMap {
 	 * @param x       the x
 	 * @param y       the y
 	 */
-	private void setOnTheMapXY(final IElement element, final int x, final int y) {
+	@Override
+	public void setOnTheMapXY(final IElement element, final int x, final int y) {
 		this.onTheMap[x][y] = element;
 	}
 

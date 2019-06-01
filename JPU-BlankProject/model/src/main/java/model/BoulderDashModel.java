@@ -20,6 +20,8 @@ public class BoulderDashModel implements IModel {
 
     /** The my vehicle. */
     private IMobile myPlayer;
+    
+    private IMobile Monster;
 
     /**
      * Instantiates a new insane vehicles model.
@@ -37,6 +39,7 @@ public class BoulderDashModel implements IModel {
             throws IOException {
         this.setMap(new Map(fileName));
         this.setMyPlayer(new MyPlayer(myPlayerStartX, myPlayerStartY, this.getMap()));
+        
     }
 
     /* (non-Javadoc)
@@ -47,12 +50,6 @@ public class BoulderDashModel implements IModel {
         return this.map;
     }
 
-    /**
-     * Sets the road.
-     *
-     * @param road
-     *            the road to set
-     */
     private void setMap(final IMap map) {
         this.map = map;
     }
@@ -65,16 +62,18 @@ public class BoulderDashModel implements IModel {
     public final  IMobile getMyPlayer() {
         return this.myPlayer;
     }
-
-    /**
-     * Sets the my vehicle.
-     *
-     * @param myVehicle
-     *            the myVehicle to set
-     */
+    
     private void setMyPlayer(final IMobile myPlayer) {
         this.myPlayer = myPlayer;
     }
+
+	public final IMobile getMonster() {
+		return this.Monster;
+	}
+
+	public void setMonster(IMobile monster) {
+		this.Monster = monster;
+	}
 
 	
 

@@ -18,6 +18,8 @@ public interface IModel {
 
   
     IMobile getMyPlayer();
+    
+    IMobile getMonster();
 
 
 }

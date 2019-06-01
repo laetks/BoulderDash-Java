@@ -44,25 +44,29 @@ abstract class Mobile extends Element implements IMobile {
 		this.position = new Point();
 	}
 	
-	Mobile(final Sprite sprite, final Permeability permeability) {
-		super(sprite, permeability);
-		this.position = new Point();
-	}
-
-	/**
-	 * Instantiates a new mobile.
-	 *
-	 * @param x            the x
-	 * @param y            the y
-	 * @param sprite       the sprite
-	 * @param road         the road
-	 * @param permeability the permeability
-	 */
 	Mobile(final int x, final int y, final Sprite sprite, final IMap map, final Permeability permeability) {
 		this(sprite, map, permeability);
 		this.setX(x);
 		this.setY(y);
 	}
+	
+	
+	
+	
+	Mobile(final Sprite sprite, final Permeability permeability) {
+		super(sprite, permeability);
+		this.position = new Point();
+	}
+	
+	//AJOUT\\
+	Mobile(int x, int y, final Sprite sprite, final Permeability permeability) {
+		this(sprite, permeability);
+		this.setX(x);
+		this.setY(y);
+	}
+
+	
+	
 
 	/*
 	 * (non-Javadoc)
@@ -140,7 +144,7 @@ abstract class Mobile extends Element implements IMobile {
 	 *
 	 * @param x the new x
 	 */
-	public final void setX(final int x) {
+	public void setX(final int x) {
 		this.getPosition().x = x;
 		
 	}
@@ -161,7 +165,7 @@ abstract class Mobile extends Element implements IMobile {
 	 * @param y the new y, as the road is an infinite loop, there's a modulo based
 	 *          on the road height.
 	 */
-	public final void setY(final int y) {
+	public void setY(final int y) {
 		this.getPosition().y = y;
 		
 	}

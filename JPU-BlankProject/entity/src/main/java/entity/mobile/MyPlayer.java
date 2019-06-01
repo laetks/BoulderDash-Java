@@ -59,13 +59,6 @@ public class MyPlayer extends Mobile {
 		super.moveLeft();
 		this.setSprite(spriteTurnLeft);
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.exia.insanevehicles.model.element.mobile.Mobile#moveRight()
-	 */
-	@Override
 	public final void moveRight() {
 		super.moveRight();
 		this.setSprite(spriteTurnRight);

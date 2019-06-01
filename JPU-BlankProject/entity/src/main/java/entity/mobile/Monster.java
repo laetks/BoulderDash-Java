@@ -1,7 +1,9 @@
 package entity.mobile;
 
 import java.awt.Point;
+import java.io.IOException;
 
+import entity.IMap;
 import entity.Permeability;
 import entity.Sprite;
 import fr.exia.showboard.IPawn;
@@ -12,7 +14,9 @@ public class Monster extends Mobile implements IPawn {
 	private static final Sprite SPRITE = new Sprite('X', "MDown.png");
 
 	private Point position;
+	
 
+	
 	/** The random. */
 	//private final Random random = new Random();
 	
@@ -22,7 +26,35 @@ public class Monster extends Mobile implements IPawn {
 	public Monster() {
 		super(SPRITE, Permeability.KILLING);
 	}
+	
+	//AJOUT
+	public Monster(final Sprite sprite, final Permeability permeability) {
+		super(sprite, permeability);
+		this.position = new Point();
+	}
+	
+	//AJOUT
+	public Monster(int x, int y) {
+		this(SPRITE, Permeability.KILLING);
+		this.setX(x);
+		this.setY(y);
 
+	}
+	
+
+	@Override
+	public final void moveRight() {
+		super.moveRight();
+		this.setSprite(SPRITE);
+	}
+	public final void moveDown() {
+		super.moveDown();
+		this.setSprite(SPRITE);
+	}
+	public final void moveUp() {
+		super.moveUp();
+		this.setSprite(SPRITE);
+	}
 	
 
 	
@@ -76,13 +108,5 @@ public class Monster extends Mobile implements IPawn {
 		this.position = new Point(x, y);
 	}
 
-	/**
-	 * <p>
-	 * Move randomly the monster on the board.
-	 * </p>
-	 */
-	public final void move() {
-		
-
-	}
+	
 }
