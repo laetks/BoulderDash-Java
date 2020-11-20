@@ -46,9 +46,6 @@ We are happy to see that we respected our provisional schedule quite well.
 ## 5. UML diagrams
 Here is the architecture of our project.
 
-#### Package Diagram : 
-<a href="https://ibb.co/LkfmBYy"><img src="https://i.ibb.co/GxjyGnD/Package-Diagram.jpg" alt="Package-Diagram" border="0"></a>
-
 #### Component Diagram :
 <a href="https://ibb.co/Pg94mjj"><img src="https://i.ibb.co/GRtkxpp/Component-Diagram.jpg" alt="Component-Diagram" border="0"></a>
 
